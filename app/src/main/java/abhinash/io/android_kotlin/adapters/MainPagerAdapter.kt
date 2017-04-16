@@ -2,6 +2,7 @@ package abhinash.io.android_kotlin.adapters
 
 import abhinash.io.android_kotlin.controller.MenuFragment
 import abhinash.io.android_kotlin.R
+import abhinash.io.android_kotlin.controller.NotificationsFragment
 import android.content.Context
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
@@ -23,7 +24,7 @@ class MainPagerAdapter(val fm: FragmentManager?, val context: Context?) : Fragme
                 return frag
             }
             1 -> {
-                val frag = MenuFragment()
+                val frag = NotificationsFragment()
                 return frag
             }
             2 -> {

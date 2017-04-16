@@ -15,13 +15,13 @@
         tools:context="abhinash.io.android_kotlin.controller.MainActivity"
         android:background="@color/white">
 
-        <android.support.v4.view.ViewPager
+        <abhinash.io.android_kotlin.adapters.NONSwipableViewPager
             android:id="@+id/contentPager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
 
-        </android.support.v4.view.ViewPager>
+        </abhinash.io.android_kotlin.adapters.NONSwipableViewPager>
 
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation"

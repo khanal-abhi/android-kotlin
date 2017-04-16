@@ -7,10 +7,12 @@ import abhinash.io.android_kotlin.util.MESSAGE
 import abhinash.io.android_kotlin.util.SNACKBAR
 import android.net.Uri
 import android.os.Bundle
+import android.support.design.internal.BottomNavigationPresenter
 import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.Snackbar
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
+import java.lang.reflect.Field
 
 class MainActivity : AppCompatActivity(), OnFragmentInteractionListener {
 
@@ -28,6 +30,8 @@ class MainActivity : AppCompatActivity(), OnFragmentInteractionListener {
     }
 
     private var viewPager: ViewPager? = null
+    private var navigation: BottomNavigationView? = null
+
 
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -70,8 +74,8 @@ class MainActivity : AppCompatActivity(), OnFragmentInteractionListener {
 
         viewPager = findViewById(R.id.contentPager) as? ViewPager
         viewPager?.adapter = MainPagerAdapter(supportFragmentManager, this)
-        val navigation = findViewById(R.id.navigation) as BottomNavigationView
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        navigation = findViewById(R.id.navigation) as BottomNavigationView
+        navigation?.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
 }
