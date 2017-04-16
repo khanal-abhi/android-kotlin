@@ -11,10 +11,12 @@ import android.support.v4.app.FragmentPagerAdapter
  * Created by khanal on 4/16/17.
  * This is the Pager adapter for the fragment pager.
  */
-public class MainPagerAdapter(val fm: FragmentManager?, val context: Context?) : FragmentPagerAdapter(fm) {
+class MainPagerAdapter(val fm: FragmentManager?, val context: Context?) : FragmentPagerAdapter(fm) {
 
+    /**
+     * Return the corresponding fragment to the pager.
+     */
     override fun getItem(position: Int): Fragment {
-
         when (position) {
             0 -> {
                 val frag = MenuFragment()

@@ -14,7 +14,11 @@ import android.support.v7.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity(), OnFragmentInteractionListener {
 
-
+    /**
+     * When one of the fragments are interacted with, a uri is sent here to perform actions in the
+     * activity or communicate with other fragments.
+     * - uri: sent uri
+     */
     override fun onFragmentInteraction(uri: Uri) {
         val mainPath = uri.pathSegments[0]
         if (mainPath.toLowerCase() == SNACKBAR.toLowerCase()) {

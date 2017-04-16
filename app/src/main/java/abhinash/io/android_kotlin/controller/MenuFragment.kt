@@ -20,6 +20,12 @@ import android.view.ViewGroup
  * to handle interaction events.
  */
 class MenuFragment : Fragment(), MainMenuRecyclerAdapter.MenuItemClickListener {
+
+    /**
+     * This handles the click event of an item in the menu list.
+     * - index: index of the item in the array.
+     * - item: name of the menu item.
+     * */
     override fun onItemClickedListener(index: Int, item: String?) {
         if (null != item) {
             var uri = Uri.Builder().scheme("fashionability")
