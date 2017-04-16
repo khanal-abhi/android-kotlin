@@ -17,7 +17,7 @@ import android.widget.TextView
 class FashionItemAdapter(var fashionItems: ArrayList<FashionItem>,
                          var menuItemClickListener: MainMenuRecyclerAdapter.MenuItemClickListener?): RecyclerView.Adapter<FashionItemAdapter.FashionItemViewHolder>() {
 
-    private var lastSelectedPosition: Int? = null
+    var lastSelectedPosition: Int? = null
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): FashionItemViewHolder {
         return FashionItemViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.row_fashion_item, parent, false),
                 this,
@@ -32,6 +32,9 @@ class FashionItemAdapter(var fashionItems: ArrayList<FashionItem>,
         holder?.bind(fashionItems[position])
     }
 
+    /**
+     * Deals with the selection.
+     */
     fun onNewItemSelected(position: Int) {
         val lastPosition = lastSelectedPosition
         if (null != lastPosition) {
@@ -41,7 +44,7 @@ class FashionItemAdapter(var fashionItems: ArrayList<FashionItem>,
         lastSelectedPosition = position
         val currentPosition = lastSelectedPosition
         if (null != currentPosition) {
-            fashionItems[currentPosition].selected = false
+            fashionItems[currentPosition].selected = true
             this.notifyItemChanged(currentPosition)
         }
     }
@@ -57,13 +60,18 @@ class FashionItemAdapter(var fashionItems: ArrayList<FashionItem>,
          */
         fun bind(fashionItem: FashionItem) {
             (itemView.findViewById(R.id.txt_clothing_title) as? TextView)?.text = fashionItem.title
-            (itemView.findViewById(R.id.txt_clothing_title) as? TextView)?.setTextColor(ContextCompat.getColor(itemView?.context, R.color.darkGrey))
-            itemView.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.lightestGrey))
+            if (fashionItem.selected) {
+                (itemView.findViewById(R.id.txt_clothing_title) as? TextView)?.setTextColor(ContextCompat.getColor(itemView?.context, R.color.black))
+                itemView.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.lightGrey))
+            } else {
+                (itemView.findViewById(R.id.txt_clothing_title) as? TextView)?.setTextColor(ContextCompat.getColor(itemView?.context, R.color.darkGrey))
+                itemView.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.lightestGrey))
+            }
             itemView.setOnClickListener { _ ->
                 this.adapter?.onNewItemSelected(adapterPosition)
                 menuItemClickListener?.onItemClickedListener(adapterPosition, fashionItem.title)
                 (itemView.findViewById(R.id.txt_clothing_title) as? TextView)?.setTextColor(ContextCompat.getColor(itemView?.context, R.color.black))
-                itemView.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.lightestGrey))
+                itemView.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.lightGrey))
             }
         }
     }
