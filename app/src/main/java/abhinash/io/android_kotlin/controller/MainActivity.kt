@@ -1,7 +1,8 @@
-package abhinash.io.android_kotlin
+package abhinash.io.android_kotlin.controller
 
-import abhinash.io.android_kotlin.MenuFragment.OnFragmentInteractionListener
+import abhinash.io.android_kotlin.R
 import abhinash.io.android_kotlin.adapters.MainPagerAdapter
+import abhinash.io.android_kotlin.controller.MenuFragment.OnFragmentInteractionListener
 import abhinash.io.android_kotlin.util.MESSAGE
 import abhinash.io.android_kotlin.util.SNACKBAR
 import android.net.Uri
@@ -29,22 +30,27 @@ class MainActivity : AppCompatActivity(), OnFragmentInteractionListener {
         when (item.itemId) {
 
             R.id.navigation_menu -> {
+                supportActionBar?.title = resources.getString(R.string.title_menu)
                 viewPager?.setCurrentItem(0, true)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
+                supportActionBar?.title = resources.getString(R.string.title_notifications)
                 viewPager?.setCurrentItem(1, true)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_clothes -> {
+                supportActionBar?.title = resources.getString(R.string.title_clothes)
                 viewPager?.setCurrentItem(2, true)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_collections -> {
+                supportActionBar?.title = resources.getString(R.string.title_collections)
                 viewPager?.setCurrentItem(3, true)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_profile -> {
+                supportActionBar?.title = resources.getString(R.string.title_profile)
                 viewPager?.setCurrentItem(4, true)
                 return@OnNavigationItemSelectedListener true
             }
@@ -55,6 +61,8 @@ class MainActivity : AppCompatActivity(), OnFragmentInteractionListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar?.setDisplayShowTitleEnabled(true)
+        supportActionBar?.title = resources.getString(R.string.title_menu)
 
         viewPager = findViewById(R.id.contentPager) as? ViewPager
         viewPager?.adapter = MainPagerAdapter(supportFragmentManager, this)

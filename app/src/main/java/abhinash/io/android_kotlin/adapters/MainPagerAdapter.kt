@@ -1,6 +1,6 @@
 package abhinash.io.android_kotlin.adapters
 
-import abhinash.io.android_kotlin.MenuFragment
+import abhinash.io.android_kotlin.controller.MenuFragment
 import abhinash.io.android_kotlin.R
 import android.content.Context
 import android.support.v4.app.Fragment

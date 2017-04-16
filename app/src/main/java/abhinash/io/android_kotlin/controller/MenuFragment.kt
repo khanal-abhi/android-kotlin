@@ -1,8 +1,8 @@
-package abhinash.io.android_kotlin
+package abhinash.io.android_kotlin.controller
 
+import abhinash.io.android_kotlin.R
 import abhinash.io.android_kotlin.adapters.MainMenuRecyclerAdapter
 import android.content.Context
-import android.graphics.drawable.GradientDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
