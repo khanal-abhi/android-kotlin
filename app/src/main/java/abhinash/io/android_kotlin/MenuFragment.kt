@@ -1,9 +1,12 @@
 package abhinash.io.android_kotlin
 
+import abhinash.io.android_kotlin.adapters.MainMenuRecyclerAdapter
 import android.content.Context
+import android.graphics.drawable.GradientDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +19,17 @@ import android.view.ViewGroup
  * [MenuFragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
  */
-class MenuFragment : Fragment() {
+class MenuFragment : Fragment(), MainMenuRecyclerAdapter.MenuItemClickListener {
+    override fun onItemClickedListener(index: Int, item: String?) {
+        if (null != item) {
+            var uri = Uri.Builder().scheme("fashionability")
+                    .authority("io.abhinash")
+                    .path("snackbar")
+                    .appendQueryParameter("message", "$item selected.")
+                    .build()
+            mListener?.onFragmentInteraction(uri = uri)
+        }
+    }
 
     private var mListener: OnFragmentInteractionListener? = null
     private var recyclerView: RecyclerView? = null
@@ -25,7 +38,12 @@ class MenuFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater!!.inflate(R.layout.fragment_menu, container, false)
+        val rootView = inflater!!.inflate(R.layout.fragment_menu, container, false)
+        recyclerView = rootView.findViewById(R.id.recycler_menu_frag) as? RecyclerView
+        val adapter = MainMenuRecyclerAdapter(context.resources.getStringArray(R.array.menu_titles), this)
+        recyclerView?.adapter = adapter
+        recyclerView?.layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.VERTICAL, false)
+        return rootView
     }
 
     override fun onAttach(context: Context?) {
@@ -52,7 +70,6 @@ class MenuFragment : Fragment() {
      * See the Android Training lesson [Communicating with Other Fragments](http://developer.android.com/training/basics/fragments/communicating.html) for more information.
      */
     interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         fun onFragmentInteraction(uri: Uri)
     }
 }// Required empty public constructor

@@ -2,16 +2,24 @@ package abhinash.io.android_kotlin
 
 import abhinash.io.android_kotlin.MenuFragment.OnFragmentInteractionListener
 import abhinash.io.android_kotlin.adapters.MainPagerAdapter
+import abhinash.io.android_kotlin.util.MESSAGE
+import abhinash.io.android_kotlin.util.SNACKBAR
 import android.net.Uri
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.design.widget.Snackbar
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity(), OnFragmentInteractionListener {
 
+
     override fun onFragmentInteraction(uri: Uri) {
-        println(uri.toString())
+        val mainPath = uri.pathSegments[0]
+        if (mainPath.toLowerCase() == SNACKBAR.toLowerCase()) {
+            val message = uri.getQueryParameter(MESSAGE)
+                Snackbar.make(findViewById(R.id.container), message, Snackbar.LENGTH_SHORT).show()
+        }
     }
 
     private var viewPager: ViewPager? = null
