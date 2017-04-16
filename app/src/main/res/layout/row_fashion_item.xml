@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@color/lightestGrey"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/txt_clothing_title"
+        android:textSize="16sp"
+        android:textColor="@color/darkGrey"
+        android:text="@string/placeholder_short_text"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"/>
+
+    <ImageView
+        android:id="@+id/img_clothing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_account_circle_black_24dp"/>
+
+</LinearLayout>
