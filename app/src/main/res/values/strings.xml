@@ -8,4 +8,7 @@
     <string name="title_collections">Collections</string>
     <string name="title_profile">Profiles</string>
 
+    <string name="placeholder_short_text">Lorem Ipsum</string>
+    <string name="placeholder_long_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pellentesque tristique risus vel euismod. Nullam nulla elit, laoreet vel sagittis id, molestie non felis. Sed luctus dictum ligula ut auctor. Proin nisi urna, laoreet sed vulputate et, ultrices eu lacus. Cras porta porta tellus, vitae facilisis nulla viverra in. Proin eget quam fringilla, tincidunt leo et, cursus turpis. In diam magna, ullamcorper at eros ut, varius consectetur enim. Vestibulum sed porttitor ipsum. In nunc ex, lacinia ut odio ut, aliquam ornare metus. Curabitur fringilla cursus lectus in convallis. In nisi arcu, porta sed ipsum a, dictum blandit felis. Fusce eu sapien mattis, fermentum felis vitae, pharetra quam. Aenean vitae lacus efficitur nisl consectetur malesuada a a enim. Phasellus quis lorem facilisis, ornare lacus et, lacinia felis. Vestibulum laoreet lacus posuere augue convallis commodo.</string>
+
 </resources>

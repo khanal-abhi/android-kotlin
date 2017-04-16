@@ -8,4 +8,50 @@
         <item>Profile</item>
     </array>
 
+    <array name="menu_titles">
+        <item>Menu</item>
+        <item>Notification</item>
+        <item>Clothes</item>
+        <item>Collections</item>
+        <item>Profile</item>
+        <item>Menu</item>
+        <item>Notification</item>
+        <item>Clothes</item>
+        <item>Collections</item>
+        <item>Profile</item>
+        <item>Menu</item>
+        <item>Notification</item>
+        <item>Clothes</item>
+        <item>Collections</item>
+        <item>Profile</item>
+        <item>Menu</item>
+        <item>Notification</item>
+        <item>Clothes</item>
+        <item>Collections</item>
+        <item>Profile</item>
+    </array>
+
+    <array name="menu_subtitles">
+        <item>Menu</item>
+        <item>Notification</item>
+        <item>Clothes</item>
+        <item>Collections</item>
+        <item>Profile</item>
+        <item>Menu</item>
+        <item>Notification</item>
+        <item>Clothes</item>
+        <item>Collections</item>
+        <item>Profile</item>
+        <item>Menu</item>
+        <item>Notification</item>
+        <item>Clothes</item>
+        <item>Collections</item>
+        <item>Profile</item>
+        <item>Menu</item>
+        <item>Notification</item>
+        <item>Clothes</item>
+        <item>Collections</item>
+        <item>Profile</item>
+    </array>
+
 </resources>

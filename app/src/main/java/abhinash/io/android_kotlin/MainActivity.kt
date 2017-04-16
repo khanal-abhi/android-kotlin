@@ -21,18 +21,23 @@ class MainActivity : AppCompatActivity(), OnFragmentInteractionListener {
         when (item.itemId) {
 
             R.id.navigation_menu -> {
+                viewPager?.setCurrentItem(0, true)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
+                viewPager?.setCurrentItem(1, true)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_clothes -> {
+                viewPager?.setCurrentItem(2, true)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_collections -> {
+                viewPager?.setCurrentItem(3, true)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_profile -> {
+                viewPager?.setCurrentItem(4, true)
                 return@OnNavigationItemSelectedListener true
             }
         }
